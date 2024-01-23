@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="background-overlay">
+        <h1 class="center-heading">Hi_BrO</h1>
+        <div class="center-image">
+            <img src="{{ url_for('static', filename='fun.jpg') }}" alt="Centered Image" class="shake-image">
+        </div>
+        <p class="content">Welcome to PdFs_BrO! Upload and view your PDFs here.</p>
+        <div class="button-container">
+            <a href="/upload.html" class="button">Upload PDF</a>
+          
+            <a href="/view.html" class="button">View PDF</a>
+            <a href="/delete.html" class="button">Delete PDF</a>
+        </div>
+    </div>
+{% endblock %}

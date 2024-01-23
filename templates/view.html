@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="center-heading">View PDFs</h1>
+    <div class="view-page">
+        <div class="pdf-list">
+            {% if pdfs %}
+                <ol>
+                    {% for pdf in pdfs %}
+                        <li>
+                            <a href="#" onclick="loadPDF('{{ url_for('uploaded_file', filename=pdf.filename) }}')">
+                                {{ pdf.filename }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ol>
+            {% else %}
+                <p>No PDFs found.</p>
+            {% endif %}
+        </div>
+        <div class="pdf-viewer" id="pdfViewerContainer"></div>
+    </div>
+{% endblock %}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PdFs_BrO</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="background-image">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="gg">
+                <span>HeLlO</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li class="dropdown" id="optionsDropdown">
+                    <a href="#" class="dropbtn" onclick="toggleDropdown()">Options</a>
+                    <div class="dropdown-content">
+                        <a href="/upload.html">Upload PDF</a>
+                        <a href="/view.html">View PDF</a>
+                        <a href="/delete.html">Delete PDF</a>
+                    </div>
+                </li>
+                <li><a href='/contact.html'>Contact</a></li>
+                <li><a href="/about.html">About</a></li>
+            </ul>
+        </nav>
+        <h1>PdFs_BrO</h1>
+
+        <div class="background-overlay">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

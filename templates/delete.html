@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="center-heading">Delete PDFs</h1>
+    <div class="view-page">
+        <div class="pdf-list">
+            {% if pdfs %}
+                <form method="POST" action="/delete">
+                    {% for pdf in pdfs %}
+                        <label>
+                            <input type="checkbox" name="delete_pdf" value="{{ pdf.id }}">
+                            {{ pdf.filename }}
+                        </label><br>
+                    {% endfor %}
+                    <button type="submit">Delete Selected PDFs</button>
+                </form>
+            {% else %}
+                <p>No PDFs found.</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
