@@ -4,7 +4,8 @@ import os
 import secrets
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///pdfs.db')
+app.secret_key = 'tByIyqmhvo)y|WW'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///pdfs.db'
 db = SQLAlchemy(app)
 
 class PdfFile(db.Model):
