@@ -4,4 +4,4 @@ services:
     - key: FLASK_APP
       value: "app.py"
   buildCommand: "pip install -r requirements.txt"
-  startCommand: "gunicorn your_application.wsgi"
+  startCommand: "gunicorn app:app"
